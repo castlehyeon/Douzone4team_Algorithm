@@ -29,8 +29,8 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="video.html">Films <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="video.html">Films</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Music</a>
@@ -38,7 +38,7 @@
           <li class="nav-item">
             <a class="nav-link" href="about.html">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
         </ul>
@@ -46,42 +46,61 @@
     </nav>
   </header>
   <main>
-    <div id="playlist">
-      <h2>플레이리스트</h2>
-      <ul>
-        <li draggable="true" data-src="https://www.w3schools.com/html/mov_bbb.mp4">Video 1</li>
-        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211_21-02-11_01-15-49.mp4">Video 2</li>
-        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211%2B1_21-02-11_01-18-18.mp4">Video 3</li>
-      </ul>
+    <div id="maplist">
+      <h2>Map</h2>
+        <div id="map" style="width:400px;height:400px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f79fe1576145e1a90b29ddbf8cb06568"></script>
     </div>
-
-    <div id="player">
-      <video id="myVideo" width="950" height="534" controls></video>
+    <div>
+        <h2>Geolocation Map</h2>
+        <div id="map2" style="width:400px;height:400px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f79fe1576145e1a90b29ddbf8cb06568"></script>
     </div>
+    <div id="bottom-margin"></div>
   </main>
   <footer>
     <p>&copy; 2023 Studio Ghibli. All rights reserved.</p>
   </footer>
   <script>
-  const videoList = document.querySelector('#playlist');
-  const videoPlayer = document.querySelector('#player');
-  const myVideo = document.querySelector('#myVideo');
-  
-  videoList.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text/plain', event.target.dataset.src);
-  });
-  
-  videoPlayer.addEventListener('dragover', function(event) {
-    event.preventDefault();
-  });
-  
-  videoPlayer.addEventListener('drop', function(event) {
-    event.preventDefault();
-    const videoSrc = event.dataTransfer.getData('text/plain');
-    myVideo.src = videoSrc;
-    myVideo.play();
-  });
-  </script>
+    var container = document.getElementById('map');
+    var options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+    };
+    var map = new kakao.maps.Map(container, options); 
+
+
+
+    /*geolocation 으로 현재 위치 지도 띄우기*/
+    var latitude=0;
+    var longitude=0;
+
+	$(document).ready(function(){
+		if ("geolocation" in navigator) {	/* geolocation 사용 가능 */
+			navigator.geolocation.getCurrentPosition(function(data) {
+				var latitude = data.coords.latitude;
+				var longitude = data.coords.longitude;  
+			}, function(error) {
+				alert(error);
+			}, {
+				enableHighAccuracy: true,
+				timeout: Infinity,
+				maximumAge: 0
+			});
+		} else {	/* geolocation 사용 불가능 */
+			alert('geolocation 사용 불가능');
+		}
+	});
+
+    var container = document.getElementById('map2');
+    var options = {
+        center: new kakao.maps.LatLng(latitude, longitude),
+        level: 3
+    };
+    var map = new kakao.maps.Map(container, options); 
+
+</script>
+ 
 </body>
 
 </html>
