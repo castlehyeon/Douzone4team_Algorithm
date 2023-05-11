@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/412379eca8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>음악 플레이어</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>음악 플레이어</h1>
+        <div class="music-container" id="musicContainer">
+            <div class="music-info">
+                <h4 id="title">노래 제목</h4>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="img-container">
+                    <img src="images/hey.gif" alt="chun" id="cover">
+                </div>
+            </div>
+            <audio id="audio" src="music/hey.mp3" onloadstart="this.volume=0.005"></audio>
+                <div class="navigation">
+                    <button id="prev" class="action-btn"><i class="fa-sharp fa-solid fa-backward"></i></button>
+                    <button id="play" class="actiong-btn big"><i class="fa-solid fa-play"></i></button>
+                    <button id="next" class="actiong-btn"><i class="fa-sharp fa-solid fa-forward"></i></button>
+                </div>
+            
+
+        </div>
+
+    </div>
+    <script src="main.js"> </script>
+</body>
+
+</html>
