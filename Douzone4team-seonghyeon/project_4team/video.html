@@ -50,8 +50,10 @@
       <h2>플레이리스트</h2>
       <ul>
         <li draggable="true" data-src="https://www.w3schools.com/html/mov_bbb.mp4">Video 1</li>
-        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211_21-02-11_01-15-49.mp4">Video 2</li>
-        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211%2B1_21-02-11_01-18-18.mp4">Video 3</li>
+        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211_21-02-11_01-15-49.mp4">Video 2
+        </li>
+        <li draggable="true" data-src="https://douzone-bucket.s3.amazonaws.com/20210211%2B1_21-02-11_01-18-18.mp4">Video
+          3</li>
       </ul>
     </div>
 
@@ -63,24 +65,24 @@
     <p>&copy; 2023 Studio Ghibli. All rights reserved.</p>
   </footer>
   <script>
-  const videoList = document.querySelector('#playlist');
-  const videoPlayer = document.querySelector('#player');
-  const myVideo = document.querySelector('#myVideo');
-  
-  videoList.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text/plain', event.target.dataset.src);
-  });
-  
-  videoPlayer.addEventListener('dragover', function(event) {
-    event.preventDefault();
-  });
-  
-  videoPlayer.addEventListener('drop', function(event) {
-    event.preventDefault();
-    const videoSrc = event.dataTransfer.getData('text/plain');
-    myVideo.src = videoSrc;
-    myVideo.play();
-  });
+    const videoList = document.querySelector('#playlist');
+    const videoPlayer = document.querySelector('#player');
+    const myVideo = document.querySelector('#myVideo');
+
+    videoList.addEventListener('dragstart', function (event) {
+      event.dataTransfer.setData('text/plain', event.target.dataset.src);
+    });
+
+    videoPlayer.addEventListener('dragover', function (event) {
+      event.preventDefault();
+    });
+
+    videoPlayer.addEventListener('drop', function (event) {
+      event.preventDefault();
+      const videoSrc = event.dataTransfer.getData('text/plain');
+      myVideo.src = videoSrc;
+      myVideo.play();
+    });
   </script>
 </body>
 
