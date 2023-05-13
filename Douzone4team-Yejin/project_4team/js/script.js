@@ -1,6 +1,21 @@
 const musicWrap = document.querySelector(".music_container");
 const musicAudio = musicWrap.querySelector("#main-audio"); // audio
 
+//main page one
+const mainHeart = musicWrap.querySelector(".heart");
+const mainHeartIcon = musicWrap.querySelector("#heartIcon");
+const mainHeartSpan = musicWrap.querySelector(".heartSpan");
+if (localStorage.getItem("heart") == "true") {
+  mainHeartIcon.style.color = "red";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
+} else if (localStorage.getItem("heart") == "false") {
+  mainHeartIcon.style.color = "rgb(177, 177, 177)";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
+} else {
+  mainHeartIcon.style.color = "rgb(177, 177, 177)";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
+}
+
 // music info
 const imgWrap = musicWrap.querySelector(".page_two__main__current_music_photo");
 const albumArt = musicWrap.querySelector(
@@ -179,6 +194,26 @@ shuffleBtn.addEventListener("click", () => {
   }
 });
 
+// heart 버튼 클릭시
+mainHeart.addEventListener("click", () => {
+  if (localStorage.getItem("heart") == null) {
+    localStorage.setItem("heart", "true");
+    mainHeartIcon.style.color = "red";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
+    return;
+  }
+
+  if (localStorage.getItem("heart") == "true") {
+    localStorage.setItem("heart", "false");
+    mainHeartIcon.style.color = "rgb(177, 177, 177)";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
+  } else {
+    localStorage.setItem("heart", "true");
+    mainHeartIcon.style.color = "red";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
+  }
+});
+
 //음악 재생 끝날 때
 musicAudio.addEventListener("ended", () => {
   let getTextRepeat = repeatBtn.title;
@@ -212,11 +247,6 @@ musicAudio.addEventListener("ended", () => {
   playListMusic();
 });
 
-window.addEventListener("load", () => {
-  loadMusic(list_index);
-  playListMusic();
-});
-
 const playListMusic = () => {
   const playListAll = playList.querySelectorAll(".playList__song");
   for (let i = 0; i < playListAll.length; i++) {
@@ -240,3 +270,8 @@ const clicked = (elem) => {
   playMusic();
   playListMusic();
 };
+
+window.addEventListener("load", () => {
+  loadMusic(list_index);
+  playListMusic();
+});
