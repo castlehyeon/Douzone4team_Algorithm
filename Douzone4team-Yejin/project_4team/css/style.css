@@ -225,6 +225,7 @@ footer {
   align-items: center;
   font-size: 13px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .shuffle {
@@ -260,7 +261,7 @@ footer {
   cursor: pointer;
 }
 
-.playList__song:hover {
+.active {
   box-shadow: 0px 1px 7px 0.2px rgba(0, 0, 0, 0.2);
 }
 

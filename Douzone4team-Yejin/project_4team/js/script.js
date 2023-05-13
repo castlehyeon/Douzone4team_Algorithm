@@ -223,11 +223,10 @@ const playListMusic = () => {
     //클릭시 active class 주기
     if (playListAll[i].classList.contains("active")) {
       playListAll[i].classList.remove("active");
-      playListAll[i].style.boxShadow = "none";
+      console.log(playListAll[i]);
     }
     if (playListAll[i].getAttribute("data-index") == list_index) {
       playListAll[i].classList.add("active");
-      playListAll[i].style.boxShadow = "0px 1px 7px 0.2px rgba(0, 0, 0, 0.2)";
     }
     /* playListAll[i].addEventListener('click',(e)=>clicked(e.target)); //느리다 */
     playListAll[i].setAttribute("onclick", "clicked(this)");
