@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script>
 
     </script>
@@ -134,21 +135,21 @@
                     </div>
                 </div>
                 <div class="main__controller">
-                    <div class="controller__playing">
-                        <span class="playing__singer">적재</span>
-                        <span class="playing__title">Lullaby</span>
-                    </div>
-                    <div class="controller__btn">
-                        <i class="fas fa-step-backward" id="prev-bottom-btn" style="cursor: pointer;"></i>
-                        <i class="fa-solid fa-play" id="play-bottom-btn" style="cursor: pointer;"></i>
-                        <i class="fas fa-step-forward" id="next-bottom-btn" style="cursor: pointer;"></i>
+                    <div class="main__controller_wrapper">
+                        <div class="controller__playing">
+                            <span class="playing__singer"></span>
+                            <span class="playing__title"></span>
+                        </div>
+                        <div class="controller__btn">
+                            <i class="fas fa-step-backward" id="prev-bottom-btn" style="cursor: pointer;"></i>
+                            <i class="fa-solid fa-play" id="play-bottom-btn" style="cursor: pointer;"></i>
+                            <i class="fas fa-step-forward" id="next-bottom-btn" style="cursor: pointer;"></i>
+                        </div>
                     </div>
                 </div>
-
-                <body>
             </main>
 
-            <!-- 뮤직플레이 -->
+            <!-- 뮤직플레이어 -->
             <div class="page_two">
                 <header class="page_two__header">
                     <i class="fas fa-arrow-left" style="cursor: pointer; color: black;"></i>
@@ -156,8 +157,7 @@
                 </header>
                 <main class="page_two__main">
                     <div class="page_two__main__current_music_photo">
-                        <img src="https://blog.kakaocdn.net/dn/dBn2us/btqzVDEIKoE/rsKLWbH52wmoBN5qZe0FdK/img.jpg"
-                            width="170" height="250" />
+                        <img src="" width="170" height="250" />
                     </div>
                     <div class="page_two__main__current_music_info">
                         <span class="currrent_music_info__title"></span>
@@ -174,11 +174,11 @@
                         </div>
                     </div>
                     <div class="page_two__main__controller">
-                        <i class="fas fa-sync-alt" id="repeat-btn" style="cursor: pointer;"></i>
+                        <i class="material-icons" id="repeat-btn" style="font-size: 23px">repeat</i>
                         <i class="fas fa-fast-backward" id="prev-btn" style="cursor: pointer;"></i>
                         <i class="fas fa-play-circle" id="play-btn" style="cursor: pointer;"></i>
                         <i class="fas fa-fast-forward" id="next-btn" style="cursor: pointer;"></i>
-                        <i class="fas fa-random" id="shuffle-btn" style="cursor: pointer;"></i>
+                        <i class="fas fa-random" id="shuffle-btn" style="cursor: pointer; color: gray;"></i>
                     </div>
                 </main>
             </div>

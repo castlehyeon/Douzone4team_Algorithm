@@ -21,6 +21,10 @@ const prevBottomBtn = musicWrap.querySelector("#prev-bottom-btn");
 const playBottomBtn = musicWrap.querySelector("#play-bottom-btn");
 const nextBottomBtn = musicWrap.querySelector("#next-bottom-btn");
 
+// controller btn setarttribute 지정
+repeatBtn.setAttribute("title", "repeat");
+shuffleBtn.setAttribute("title", "shuffle");
+
 // bar
 const progress = musicWrap.querySelector(".m-progress");
 const progressBar = progress.querySelector(".page_two__main__time_bar");
@@ -142,47 +146,42 @@ progress.addEventListener("click", (e) => {
 });
 
 repeatBtn.addEventListener("click", () => {
-  let getTextRepeat = repeatBtn.innerText;
+  let getTextRepeat = repeatBtn.innerHTML;
   switch (getTextRepeat) {
     case "repeat":
-      repeatBtn.innerText = "repeat_one";
-      repeatBtn.setAttribute("title", "한곡 반복");
+      repeatBtn.innerHTML = "repeat_one";
+      repeatBtn.style.color = "black";
+      repeatBtn.setAttribute("title", "repeat_one");
       break;
     case "repeat_one":
-      repeatBtn.innerText = "repeat";
-      repeatBtn.setAttribute("title", "전체 반복");
+      repeatBtn.innerHTML = "repeat";
+      repeatBtn.style.color = "gray";
+      repeatBtn.setAttribute("title", "repeat");
       break;
   }
 });
 
 //셔플버튼 클릭 시
 shuffleBtn.addEventListener("click", () => {
-  let getTextShuffle = shuffleBtn.innerText;
+  let getTextShuffle = shuffleBtn.title;
   switch (getTextShuffle) {
     case "shuffle":
-      shuffleBtn.innerText = "shuffle_on";
-      shuffleBtn.setAttribute("title", "랜덤 반복");
+      shuffleBtn.title = "shuffle_on";
+      shuffleBtn.style.color = "black";
+      shuffleBtn.setAttribute("title", "shuffle_on");
       break;
     case "shuffle_on":
-      shuffleBtn.innerText = "shuffle";
-      shuffleBtn.setAttribute("title", "순서대로 반복");
+      shuffleBtn.title = "shuffle";
+      shuffleBtn.style.color = "gray";
+      shuffleBtn.setAttribute("title", "shuffle");
       break;
   }
 });
 
 //음악 재생 끝날 때
 musicAudio.addEventListener("ended", () => {
-  let getTextRepeat = repeatBtn.innerText;
-  switch (getTextRepeat) {
-    case "repeat":
-      nextMusic();
-      break;
-    case "repeat_one":
-      loadMusic(list_index);
-      playMusic();
-      break;
-  }
-  let getTextShuffle = shuffleBtn.innerText;
+  let getTextRepeat = repeatBtn.title;
+  let getTextShuffle = shuffleBtn.title;
   switch (getTextShuffle) {
     case "shuffle":
       loadMusic(list_index);
@@ -198,6 +197,15 @@ musicAudio.addEventListener("ended", () => {
         loadMusic(list_index);
         playMusic();
       }
+      break;
+  }
+  switch (getTextRepeat) {
+    case "repeat":
+      nextMusic();
+      break;
+    case "repeat_one":
+      loadMusic(list_index);
+      playMusic();
       break;
   }
   playListMusic();
