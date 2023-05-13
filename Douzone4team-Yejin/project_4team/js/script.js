@@ -2,6 +2,7 @@ const musicWrap = document.querySelector(".music_container");
 const musicAudio = musicWrap.querySelector("#main-audio"); // audio
 
 //main page one
+const mainShuffle = musicWrap.querySelector(".shuffle");
 const mainHeart = musicWrap.querySelector(".heart");
 const mainHeartIcon = musicWrap.querySelector("#heartIcon");
 const mainHeartSpan = musicWrap.querySelector(".heartSpan");
@@ -192,6 +193,19 @@ shuffleBtn.addEventListener("click", () => {
       shuffleBtn.setAttribute("title", "shuffle");
       break;
   }
+});
+
+// 상단 셔플버튼 클릭 시
+mainShuffle.addEventListener("click", () => {
+  shuffleBtn.title = "shuffle_on";
+  let randomIndex = Math.floor(Math.random() * musicList.length);
+  do {
+    randomIndex = Math.floor(Math.random() * musicList.length);
+  } while (list_index == randomIndex);
+  list_index = randomIndex;
+  loadMusic(list_index);
+  playMusic();
+  playListMusic();
 });
 
 // heart 버튼 클릭시
