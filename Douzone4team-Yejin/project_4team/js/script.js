@@ -197,7 +197,6 @@ shuffleBtn.addEventListener("click", () => {
 
 // 상단 셔플버튼 클릭 시
 mainShuffle.addEventListener("click", () => {
-  shuffleBtn.title = "shuffle_on";
   let randomIndex = Math.floor(Math.random() * musicList.length);
   do {
     randomIndex = Math.floor(Math.random() * musicList.length);
@@ -231,6 +230,15 @@ mainHeart.addEventListener("click", () => {
 //음악 재생 끝날 때
 musicAudio.addEventListener("ended", () => {
   let getTextRepeat = repeatBtn.title;
+  switch (getTextRepeat) {
+    case "repeat":
+      nextMusic();
+      break;
+    case "repeat_one":
+      loadMusic(list_index);
+      playMusic();
+      break;
+  }
   let getTextShuffle = shuffleBtn.title;
   switch (getTextShuffle) {
     case "shuffle":
@@ -247,15 +255,6 @@ musicAudio.addEventListener("ended", () => {
         loadMusic(list_index);
         playMusic();
       }
-      break;
-  }
-  switch (getTextRepeat) {
-    case "repeat":
-      nextMusic();
-      break;
-    case "repeat_one":
-      loadMusic(list_index);
-      playMusic();
       break;
   }
   playListMusic();
