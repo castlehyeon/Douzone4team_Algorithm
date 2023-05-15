@@ -126,12 +126,19 @@ footer {
 
 /* music */
 
+.music_container_wrapper {
+  height: 90vh;
+}
+
 .music_container {
   display: flex;
+  align-items: center;
+  height: 90vh;
 }
 
 .page_two {
   margin-top: 12px;
+  margin-bottom: 12px;
   margin-left: 2%;
   width: 320px;
   height: 700px;
