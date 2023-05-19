@@ -8,7 +8,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* Set background color */
@@ -21,6 +20,7 @@ header {
   background-color: #000;
   color: #fff;
   padding: 10px;
+  height: 80px;
 }
 
 nav img {
@@ -53,7 +53,7 @@ nav a {
 /* Style main content */
 main {
   margin: 20px;
-  height: auto;
+  height: 80vh;
 }
 
 h1 {
@@ -125,16 +125,52 @@ footer {
   padding-bottom: 56.25%;
 }
 
+/* style contact*/
+#maplist {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+#maplist h2 {
+  margin-top: 0;
+}
+
+#map {
+  position: initial;
+}
+
+#bottom-margin {
+  padding-bottom: 56.25%;
+}
+
+/* style localStorage*/
+#localstorage button {
+  border-radius: 1px;
+  border-color: grey;
+  margin-left: 15px;
+  padding: 3px;
+}
+
+.js-form input {
+  width: 200px;
+  height: 50px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* yejin css */
 /* music */
 
 .music_container_wrapper {
+  position: relative;
   height: 90vh;
 }
 
 .music_container {
   display: flex;
   align-items: center;
-  height: 90vh;
+  position: relative;
 }
 
 .page_two {
@@ -147,6 +183,8 @@ footer {
   box-shadow: 0px 3px 30px 1px rgba(0, 0, 0, 0.3);
   border-radius: 30px;
   padding-top: 30px;
+  position: relative;
+  float: left;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,6 +193,7 @@ footer {
 
 .page_one__header,
 .page_two__header {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -165,9 +204,11 @@ footer {
 
 .page_one__main {
   width: 65%;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .page_two__main {
@@ -283,7 +324,6 @@ footer {
 
 .song__album {
   margin-left: 10px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,15 +423,19 @@ footer {
 }
 
 .page_two__main {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .page_two__main__current_music_photo {
   margin-bottom: 70px;
+  position: relative;
 }
 .page_two__main__current_music_photo img {
+  position: relative;
   width: 220px;
   border-radius: 20px;
   box-shadow: 5px 15px 15px 0.5px rgb(131, 131, 131);
@@ -508,3 +552,5 @@ footer {
   left: -1%;
   top: -5px;
 }
+
+/* yejin css end */
