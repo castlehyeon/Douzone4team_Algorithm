@@ -65,9 +65,6 @@ p {
   font-size: 18px;
 }
 
-footer {
-  position: relative;
-}
 /* Style video */
 .video-container {
   position: relative;
@@ -109,13 +106,23 @@ footer {
 }
 
 #playlist li {
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(244, 244, 244, 0.5); /* 배경색을 반투명하게 설정 */
+  background-image: url('/images/forli.png');
+  background-size: auto;
+  background-repeat: no-repeat;
   cursor: pointer;
   padding: 5px;
   margin: 5px;
-  background-color: #eee;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  border: 2px solid #000;
+  border-radius: 10px;
 }
 
 #playlist li:hover {
+  opacity: 0.5;
   background-color: #ccc;
   color: tomato;
 }
