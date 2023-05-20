@@ -39,12 +39,11 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song.key; // 제목
   audio.src = song.link;      // 주소
-  imgCover.src = "images/Player.gif";
+  imgCover.src = "./images/Player.gif";
 }
 
 function playMusic() {
   musicContainer.classList.add("play");
-
   playBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
 
   audio.play();
@@ -65,7 +64,6 @@ function playPrevSong() {
     }
   
     loadSong(songs[songIndex]);
-  
     playMusic();
 }
 
@@ -75,29 +73,22 @@ function playNextSong (){
     if(songIndex > 2){
         songIndex = 0;
     }
-
     loadSong(songs[songIndex]);
     playMusic();
 }
 
 function updateProgress(e){
     const {duration, currentTime} = e.srcElement;
-
     const progressPer = (currentTime / duration) * 100;
-
     progress.style.width = `${progressPer}%`;
 }
 
 function changeProgress(e){
 
     const width = e.target.clientWidth; // 전체 넓이
-
     const offsetX = e.offsetX; // 현재 x 좌표;
-
     const duration = audio.duration; // 재생길이
-
     audio.currentTime = (offsetX / width) * duration; 
-
 }
 
 playBtn.addEventListener("click", () => {
