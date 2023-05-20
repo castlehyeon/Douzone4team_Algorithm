@@ -63,7 +63,6 @@ h1 {
 
 p {
   font-size: 18px;
-  margin-bottom: -20px;
 }
 
 footer {
@@ -168,10 +167,13 @@ footer {
 .music_container_wrapper {
   position: relative;
   height: 90vh;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .music_container {
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -434,6 +436,7 @@ footer {
 }
 
 .page_two__main__current_music_photo {
+  margin-top: 50px;
   margin-bottom: 70px;
   position: relative;
 }
