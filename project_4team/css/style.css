@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+#mainicon{
+
+}
+
 /* Set background color */
 body {
   background-color: #f4f4f4;
@@ -592,6 +596,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#mainicon{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #hero .icon-box {
