@@ -63,9 +63,12 @@ h1 {
 
 p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
 }
 
+footer {
+  position: relative;
+}
 /* Style video */
 .video-container {
   position: relative;
