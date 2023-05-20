@@ -37,8 +37,8 @@ let songIndex = 2;
 loadSong(songs[songIndex]);
 
 function loadSong(song) {
-  title.innerText = song.key;
-  audio.src = song.link;
+  title.innerText = song.key; // 제목
+  audio.src = song.link;      // 주소
   imgCover.src = "images/Player.gif";
 }
 
