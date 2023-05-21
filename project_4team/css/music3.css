@@ -5,6 +5,10 @@
   font-weight: normal;
   font-style: normal;
 }
+header nav a {
+  font-family: "MabinogiClassicR";
+}
+
 body {
   font-family: "MabinogiClassicR";
 }

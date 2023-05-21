@@ -11,6 +11,11 @@
 nav {
   border-radius: 10px;
 }
+
+header nav a {
+  font-family: "MabinogiClassicR";
+}
+
 nav li {
   font-family: "MabinogiClassicR";
   font-size: 20px;
