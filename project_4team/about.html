@@ -14,6 +14,33 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
     crossorigin="anonymous"></script>
+  <!--css 초기화-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+
+  <!-- SWIPER 외부 라이브러리 연결-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <!--google material icon 사용
+  class="material-icons"-->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- main.css 연결 -->
+  <link rel="stylesheet" href="./css/music3.css">
+  <!-- main.js 연결 -->
+  <script defer src="./main.js"></script>
+  <script defer src="./js/music3.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: url("./images/Py0.gif");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
@@ -39,7 +66,7 @@
             <a class="nav-link" href="music2.html">Music2</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="about.html">Music3</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact</a>
@@ -49,20 +76,254 @@
     </nav>
   </header>
   <main>
-    <div id="localstorage">
-      <h2 class="re">Local Storage</h2>
-      <!--  웹 스토리지는 string만 지원,  key와 value로 저장-->
 
-      <form class="js-form">
-        <input type="text" placeholder=" Input Name" />
-      </form>
-      <!-- 이름 입력 -->
-      <h2 class="js-greeting"></h2>
-      <button id="addbutton" onclick="onAddClick()">submit</button>
-      <button id="removbutton" onclick="onClick()">Remove</button>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="song1">
+            <div class="image1">
+              <img src="images/1.jpg" />
+            </div>
+
+            <div class="name" id="n1">
+              <p id="f1">Antifreeze</p>
+              <p id="f2">백예린</p>
+            </div>
+
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <audio src="" id="audio1"></audio>
+            <div class="durations">
+              <p id="current_duration1">0:00</p>
+              <p id="total_duration1">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg" class="pv1">
+              <img src="images/playb.png" id="playimg" class="p1">
+              <img src="images/nextplay.png" id="nextimg" class="pn1">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image2">
+              <img src="images/2.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">Hype Boy</p>
+              <p id="f2">New Jeans</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg" class="pv2">
+              <img src="images/playb.png" id="playimg" class="p2">
+              <img src="images/nextplay.png" id="nextimg" class="pn2">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image">
+              <img src="images/3.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">I AM</p>
+              <p id="f2">IVE</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg">
+              <img src="images/playb.png" id="playimg">
+              <img src="images/nextplay.png" id="nextimg">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image">
+              <img src="images/6.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">Cupid</p>
+              <p id="f2">Fiffty Fiffty</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg">
+              <img src="images/playb.png" id="playimg">
+              <img src="images/nextplay.png" id="nextimg">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image">
+              <img src="images/6.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">Flower</p>
+              <p id="f2">지수</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg">
+              <img src="images/playb.png" id="playimg">
+              <img src="images/nextplay.png" id="nextimg">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image">
+              <img src="images/6.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">Unforgiven</p>
+              <p id="f2">Ive</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg">
+              <img src="images/playb.png" id="playimg">
+              <img src="images/nextplay.png" id="nextimg">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="song">
+            <!--center, right-->
+            <div class="image">
+              <img src="images/6.jpg" />
+            </div>
+            <div class="name">
+              <p id="f1">OMG</p>
+              <p id="f2">New Jeans</p>
+            </div>
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">3:00</p>
+            </div>
+
+            <div class="iconc" id="m1">
+              <img src="images/prevplay.png" id="previmg">
+              <img src="images/playb.png" id="playimg">
+              <img src="images/nextplay.png" id="nextimg">
+            </div>
+            <!--
+          <button id="btnPlay" onclick="onPP()">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnPause">
+            <input type="button" class="iplay">
+          </button>
+          <button id="btnStop">정지 버튼</button>
+        -->
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev">
+        <!--      <div class="material-icons">arrow_back</div>-->
+        <img src="images/prevplay.png" class="material-icons">
+      </div>
+      <div class="swiper-button-next">
+        <!--      <div class="material-icons">arrow_forward</div>-->
+        <img src="images/nextplay.png" class="material-icons">
+      </div>
     </div>
-
-    <div id="bottom-margin"></div>
   </main>
   <footer>
     <p>&copy; 2023 Studio Ghibli. All rights reserved.</p>
