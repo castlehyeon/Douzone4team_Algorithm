@@ -26,6 +26,9 @@ header {
   padding: 10px;
   height: 80px;
 }
+header nav a {
+  font-family: 'MabinogiClassicR';
+}
 nav {
   border-radius: 10px;
 }
@@ -71,8 +74,17 @@ h1 {
   text-align: center;
   padding: 10px;
 }
+h2 {
+  font-family: 'MabinogiClassicR';
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 
 p {
+  font-family: 'MabinogiClassicR';
   font-size: 18px;
 }
 /*main container*/
@@ -147,8 +159,10 @@ footer {
 }
 
 #playlist li {
+  font-family: 'MabinogiClassicR';
+  margin-bottom: 10px;
   width: 300px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);*/
   /* 배경색을 반투명하게 설정 */
   background-color: rgba(244, 244, 244, 0.5);
   cursor: pointer;
@@ -168,7 +182,7 @@ footer {
 #playlist li:hover {
   opacity: 0.5;
   background-color: #ccc;
-  color: tomato;
+  color: white;
 }
 
 #player {
@@ -325,11 +339,13 @@ footer {
 }
 
 .singer-name {
+  font-family: 'MabinogiClassicR';
   font-size: 25px;
   margin-bottom: 10px;
 }
 
 .singer-category {
+  font-family: 'MabinogiClassicR';
   font-size: 13px;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -381,6 +397,7 @@ footer {
 }
 
 .playList__song {
+  font-family: 'MabinogiClassicR';
   width: 70%;
   height: 60px;
   padding: 2px;
@@ -464,6 +481,7 @@ footer {
 }
 
 .controller__playing {
+  font-family: 'MabinogiClassicR';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -530,11 +548,13 @@ footer {
 }
 
 .currrent_music_info__title {
+  font-family: 'MabinogiClassicR';
   font-size: 20px;
   margin-bottom: 20px;
 }
 
 .currrent_music_info__singer {
+  font-family: 'MabinogiClassicR';
   font-size: 16px;
   color: rgba(0, 0, 0, 0.4);
 }

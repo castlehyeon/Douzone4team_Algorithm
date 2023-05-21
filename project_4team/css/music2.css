@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'MabinogiClassicR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
@@ -24,7 +30,9 @@ footer {
 }
 h1 {
   color: white;
+  font-family: 'MabinogiClassicR';
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -44,6 +52,10 @@ h1 {
 
 }
 
+.music-container div h4{
+  font-family: 'MabinogiClassicR';
+  text-align: center;
+}
 .music-info {
 
   position: absolute;
