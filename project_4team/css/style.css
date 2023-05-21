@@ -1,6 +1,13 @@
 @import "reset.css";
 /* Reset default margin and padding */
 
+@font-face {
+  font-family: 'MabinogiClassicR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --main-black: rgba(0, 0, 0, 0.85);
 }
@@ -117,7 +124,7 @@ footer {
 
 #playlist li {
   width: 300px;
-  font-family: Arial, Helvetica, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(244, 244, 244, 0.5); /* 배경색을 반투명하게 설정 */
   /* background-image: url("/images/forli.png");
@@ -179,6 +186,20 @@ footer {
   vertical-align: top;
   margin-bottom: 50px;
 }
+
+.playlist-image {
+  /* 초기 상태 */
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.playlist-image.show {
+  /* 애니메이션 적용 상태 */
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* style contact*/
 #maplist {
   float: left;
