@@ -169,6 +169,7 @@ footer {
 
 #playlist li {
   font-family: "MabinogiClassicR";
+  font-size: 20px;
   margin-bottom: 10px;
   width: 300px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
