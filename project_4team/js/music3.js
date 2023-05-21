@@ -66,11 +66,11 @@ new Swiper('.swiper', {
 });
 // left player 
 let songimg = document.querySelector('.image1');
-songimg.innerHTML = `<img src="${All_song[1].img}" />`;
+songimg.innerHTML = `<img src="${All_song[0].img}" />`;
 
 let songname = document.querySelector('#n1');
-songname.innerHTML = `<p id="f1">${All_song[1].name}</p>
-<p id="f2">${All_song[1].singer}</p>`;
+songname.innerHTML = `<p id="f1">${All_song[0].name}</p>
+<p id="f2">${All_song[0].singer}</p>`;
 
 let slen1 = document.querySelector('#current_duration1');
 let sflen1 = document.querySelector('#total_duration1');
@@ -78,8 +78,6 @@ let sflen1 = document.querySelector('#total_duration1');
 //left
 const musicAudio = document.querySelector("#audio1");
 musicAudio.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Howls+Moving+Castle+OST++Theme+Song.mp3";
-//const musicObj = new Audio();
-//musicObj.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Howls+Moving+Castle+OST++Theme+Song.mp3";
 
 $(function () {
   var check = true;
@@ -96,6 +94,60 @@ $(function () {
   });
 });
 
+
+const musicAudio2 = document.querySelector("#audio2");
+musicAudio2.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/y2mate.com+-+%E9%9F%A9%E5%9B%BDponyo.mp3";
+
+$(function () {
+  var check = true;
+  $(".p2").click(function () {
+    if (check) {
+      musicAudio2.play();
+      $(this).attr("src", "images/pause.png");
+      check = false;
+    } else if (!check) {
+      musicAudio2.pause();
+      $(this).attr("src", "images/playb.png");
+      check = true;
+    }
+  });
+});
+
+
+
+const musicAudio3 = document.querySelector("#audio3");
+musicAudio3.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Always+With+Me.mp3";
+$(function () {
+  var check = true;
+  $(".p3").click(function () {
+    if (check) {
+      musicAudio3.play();
+      $(this).attr("src", "images/pause.png");
+      check = false;
+    } else if (!check) {
+      musicAudio3.pause();
+      $(this).attr("src", "images/playb.png");
+      check = true;
+    }
+  });
+});
+
+const musicAudio4 = document.querySelector("#audio4");
+musicAudio4.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/y2mate.com+-+Kikis+Delivery+Service++Umi+No+Mieru+Machi+Piano.mp3";
+$(function () {
+  var check = true;
+  $(".p4").click(function () {
+    if (check) {
+      musicAudio4.play();
+      $(this).attr("src", "images/pause.png");
+      check = false;
+    } else if (!check) {
+      musicAudio4.pause();
+      $(this).attr("src", "images/playb.png");
+      check = true;
+    }
+  });
+});
 
 $(function () {
   var check = true;

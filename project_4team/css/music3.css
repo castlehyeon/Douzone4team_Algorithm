@@ -113,6 +113,17 @@
    margin-left: 15%;
  }
 
+ #songimg{
+  width: 55%;
+  position: relative;
+  margin-top: 15%;
+  left: 22.5%;
+  /*   margin-left: calc(270px/-2);*/
+  margin-bottom: 7%;
+  box-shadow: 0px 8px 6px 0px #666;
+
+ }
+
  .swiper-slide #playimg {
    left: 266%;
  }
