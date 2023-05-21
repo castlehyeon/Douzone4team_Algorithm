@@ -1,5 +1,4 @@
 @import "reset.css";
-/* Reset default margin and padding */
 
 @font-face {
   font-family: 'MabinogiClassicR';
@@ -17,15 +16,10 @@
   padding: 0;
 }
 
-#mainicon {
-}
-
-/* Set background color */
 body {
   background-color: #f4f4f4;
 }
 
-/* Style header and navigation */
 header {
   background-color: #000;
   color: #fff;
@@ -60,21 +54,47 @@ nav a {
   font-weight: bold;
 }
 
-/* Style main content */
 main {
   margin: 20px;
   height: auto;
 }
 
 h1 {
+  font-family: 'MabinogiClassicR';
   font-size: 36px;
   margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 p {
   font-size: 18px;
 }
+/*main container*/
+#main-container {
+  background-color: rgba(128, 128, 128, 0.5);
+  padding: 10px;
+  width: auto;
+  border-radius: 10px;
+  height: min-content;
+}
+#typingText::after {
+  content: "|"; /* 커서 표시를 위해 수직 막대(|)로 설정 */
+  animation: blink-caret 0.75s step-end infinite;
+}
 
+@keyframes blink-caret {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+#typingText{
+  font-size: 36px;
+  font-family: 'MabinogiClassicR';
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 /* Style video */
 .video-container {
   position: relative;
@@ -124,12 +144,9 @@ footer {
 
 #playlist li {
   width: 300px;
-  /*font-family: Arial, Helvetica, sans-serif;*/
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: rgba(244, 244, 244, 0.5); /* 배경색을 반투명하게 설정 */
-  /* background-image: url("/images/forli.png");
-  background-size: auto;
-  background-repeat: no-repeat; */
+  /* 배경색을 반투명하게 설정 */
+  background-color: rgba(244, 244, 244, 0.5);
   cursor: pointer;
   padding: 5px;
   margin: 5px;
@@ -155,27 +172,6 @@ footer {
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
-}
-
-#currentVideo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-
-#currentVideo .video-thumbnail {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-right: 10px;
-}
-
-#currentVideo .video-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .playlist-image {

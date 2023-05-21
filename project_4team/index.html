@@ -57,6 +57,57 @@
     </nav>
   </header>
   <main>
+    <h1>안녕하세요.</h1>
+    <p id="typingText"></p>
+    <script>
+
+      const typingText = document.getElementById("typingText");
+      const messages = [
+        "행복 4조입니다.٩(๑❛ᴗ❛๑)۶",
+        "열심히 하겠습니다.( •̀ω•́ )و✧"
+      ];
+      let currentMessageIndex = 0;
+      let currentMessage = "";
+      // 각 글자 입력 딜레이
+      let typingDelay = 200;
+      // 각 글자 삭제 딜레이
+      let erasingDelay = 100;
+      // 다음 메시지 출력 전 딜레이
+      let newMessageDelay = 2000;
+
+      function type() {
+        if (currentMessageIndex < messages.length) {
+          if (currentMessage.length === messages[currentMessageIndex].length) {
+            // 모든 글자를 입력한 경우, 글자가 삭제되도록.
+            typingText.classList.remove("typing");
+            setTimeout(erase, newMessageDelay);
+            return;
+          }
+
+          typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length + 1);
+          currentMessage += messages[currentMessageIndex][currentMessage.length];
+
+          setTimeout(type, typingDelay);
+        }
+      }
+
+      function erase() {
+        if (currentMessage.length === 0) {
+          // 모든 글자를 삭제한 경우, 다음 메시지로 넘어갈 수 있게.
+          currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+          setTimeout(type, typingDelay);
+          return;
+        }
+
+        typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length - 1);
+        currentMessage = currentMessage.slice(0, -1);
+
+        setTimeout(erase, erasingDelay);
+      }
+
+      type();
+    </script>
+    <div id="main-container">
     <div id="hero-wrapper">
       <section id="hero" class="d-flex align-items-center">
 
@@ -133,6 +184,7 @@
           </div>
 
       </section><!-- End Hero -->
+    </div>
     </div>
   </main>
 
