@@ -1,8 +1,9 @@
 @import "reset.css";
 
 @font-face {
-  font-family: 'MabinogiClassicR';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+  font-family: "MabinogiClassicR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,9 +27,14 @@ header {
   padding: 10px;
   height: 80px;
 }
+header nav a {
+  font-family: "MabinogiClassicR";
+}
+
 nav {
   border-radius: 10px;
 }
+
 nav img {
   position: relative;
   display: flex;
@@ -47,7 +53,7 @@ nav ul {
 }
 
 nav li {
-  font-family: 'MabinogiClassicR';
+  font-family: "MabinogiClassicR";
   font-size: 20px;
   /*margin: 10px;*/
 }
@@ -64,7 +70,16 @@ main {
 }
 
 h1 {
-  font-family: 'MabinogiClassicR';
+  font-family: "MabinogiClassicR";
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  font-family: "MabinogiClassicR";
   font-size: 36px;
   margin-bottom: 10px;
   color: white;
@@ -73,6 +88,7 @@ h1 {
 }
 
 p {
+  font-family: "MabinogiClassicR";
   font-size: 18px;
 }
 /*main container*/
@@ -89,12 +105,17 @@ p {
 }
 
 @keyframes blink-caret {
-  from, to { opacity: 0; }
-  50% { opacity: 1; }
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
-#typingText{
+#typingText {
   font-size: 36px;
-  font-family: 'MabinogiClassicR';
+  font-family: "MabinogiClassicR";
   color: white;
   text-align: center;
   padding: 10px;
@@ -147,6 +168,8 @@ footer {
 }
 
 #playlist li {
+  font-family: "MabinogiClassicR";
+  margin-bottom: 10px;
   width: 300px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* 배경색을 반투명하게 설정 */
@@ -168,7 +191,7 @@ footer {
 #playlist li:hover {
   opacity: 0.5;
   background-color: #ccc;
-  color: tomato;
+  color: white;
 }
 
 #player {
@@ -325,11 +348,13 @@ footer {
 }
 
 .singer-name {
+  font-family: "MabinogiClassicR";
   font-size: 25px;
   margin-bottom: 10px;
 }
 
 .singer-category {
+  font-family: "MabinogiClassicR";
   font-size: 13px;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -381,6 +406,7 @@ footer {
 }
 
 .playList__song {
+  font-family: "MabinogiClassicR";
   width: 70%;
   height: 60px;
   padding: 2px;
@@ -464,6 +490,7 @@ footer {
 }
 
 .controller__playing {
+  font-family: "MabinogiClassicR";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -530,11 +557,13 @@ footer {
 }
 
 .currrent_music_info__title {
+  font-family: "MabinogiClassicR";
   font-size: 20px;
   margin-bottom: 20px;
 }
 
 .currrent_music_info__singer {
+  font-family: "MabinogiClassicR";
   font-size: 16px;
   color: rgba(0, 0, 0, 0.4);
 }
