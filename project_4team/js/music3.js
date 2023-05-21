@@ -42,6 +42,7 @@ let All_song = [
     singer: "New Jeans"
   }
 ];
+
 new Swiper('.swiper', {
   loop: true,
   slidesPerView: 3.5, //
@@ -64,6 +65,7 @@ new Swiper('.swiper', {
     slideShadows: false,
   }
 });
+
 // left player 
 let songimg = document.querySelector('.image1');
 songimg.innerHTML = `<img src="${All_song[0].img}" />`;
