@@ -31,10 +31,12 @@ const songs = [
   }
 ];
 
-
-let songIndex = 2;
+let nowplay = document.getElementsByClassName("song");
+let songIndex = 0;
 
 loadSong(songs[songIndex]);
+
+
 
 function loadSong(song) {
   title.innerText = song.key; // 제목
@@ -45,7 +47,7 @@ function loadSong(song) {
 function playMusic() {
   musicContainer.classList.add("play");
   playBtn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-
+  nowplay[songIndex].style.backgroundColor = "rgba(0, 255, 89, 0.5)";
   audio.play();
 }
 
@@ -54,27 +56,37 @@ function pauseMusic(){
     playBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
 
     audio.pause();
+    for(index in nowplay){
+        nowplay[index].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
+    }
 }
 
 function playPrevSong() {
     songIndex--; 
 
     if (songIndex < 0) {
+        nowplay[0].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
       songIndex = songs.length - 1;
     }
-  
+    
     loadSong(songs[songIndex]);
     playMusic();
+    
+    nowplay[songIndex+1].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
+    nowplay[songIndex].style.backgroundColor = "rgba(0, 255, 89, 0.5)";
 }
 
 function playNextSong (){
     songIndex++;
 
-    if(songIndex > 2){
+    if(songIndex > 4){
+        nowplay[4].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
         songIndex = 0;
     }
     loadSong(songs[songIndex]);
     playMusic();
+    nowplay[songIndex-1].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
+    nowplay[songIndex].style.backgroundColor = "rgba(0, 255, 89, 0.5)";
 }
 
 function updateProgress(e){
@@ -91,13 +103,19 @@ function changeProgress(e){
     audio.currentTime = (offsetX / width) * duration; 
 }
 
+// 배경이미지
+    let body = document.getElementById("background");
+
+
 playBtn.addEventListener("click", () => {
     const isPlaying = musicContainer.classList.contains('play');
 
     if(isPlaying){
         pauseMusic();
+        body.style.backgroundImage = "url('./images/Py0.gif')";
     } else{
         playMusic();
+        body.style.backgroundImage = "url('./images/Py2.gif')";
     }
 });
 

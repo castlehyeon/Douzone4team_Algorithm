@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
   <title>Studio GHIBLI</title>
   <link
-      rel="icon"
-      href="https://douzone-bucket.s3.amazonaws.com/favicon.ico"
-    />
+          rel="icon"
+          href="https://douzone-bucket.s3.amazonaws.com/favicon.ico"
+  />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
+          integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+          crossorigin="anonymous"></script>
   <style>
     body {
       background-image: url("./images/Py0.gif");
@@ -34,86 +34,86 @@
 
 <body>
 <!--<div id="custom-cursor"></div>-->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="video.html">Films</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="music.html">Music</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="music2.html">Music2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="music3.html">Music3</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <h1>안녕하세요.</h1>
-    <p id="typingText"></p>
-    <script>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="video.html">Films</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="music.html">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="music2.html">Music2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="music3.html">Music3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main>
+  <h1>안녕하세요.</h1>
+  <p id="typingText"></p>
+  <script>
 
-      const typingText = document.getElementById("typingText");
-      const messages = [
-        "행복 4조입니다٩(๑❛ᴗ❛๑)۶",
-        "열심히 하겠습니다!( •̀ω•́ )و✧"
-      ];
-      let currentMessageIndex = 0;
-      let currentMessage = "";
-      // 각 글자 입력 딜레이
-      let typingDelay = 200;
-      // 각 글자 삭제 딜레이
-      let erasingDelay = 100;
-      // 다음 메시지 출력 전 딜레이
-      let newMessageDelay = 2000;
+    const typingText = document.getElementById("typingText");
+    const messages = [
+      "행복 4조입니다٩(๑❛ᴗ❛๑)۶",
+      "열심히 하겠습니다!( •̀ω•́ )و✧"
+    ];
+    let currentMessageIndex = 0;
+    let currentMessage = "";
+    // 각 글자 입력 딜레이
+    let typingDelay = 200;
+    // 각 글자 삭제 딜레이
+    let erasingDelay = 100;
+    // 다음 메시지 출력 전 딜레이
+    let newMessageDelay = 2000;
 
-      function type() {
-        if (currentMessageIndex < messages.length) {
-          if (currentMessage.length === messages[currentMessageIndex].length) {
-            // 모든 글자를 입력한 경우, 글자가 삭제되도록.
-            typingText.classList.remove("typing");
-            setTimeout(erase, newMessageDelay);
-            return;
-          }
-
-          typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length + 1);
-          currentMessage += messages[currentMessageIndex][currentMessage.length];
-
-          setTimeout(type, typingDelay);
-        }
-      }
-
-      function erase() {
-        if (currentMessage.length === 0) {
-          // 모든 글자를 삭제한 경우, 다음 메시지로 넘어갈 수 있게.
-          currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-          setTimeout(type, typingDelay);
+    function type() {
+      if (currentMessageIndex < messages.length) {
+        if (currentMessage.length === messages[currentMessageIndex].length) {
+          // 모든 글자를 입력한 경우, 글자가 삭제되도록.
+          typingText.classList.remove("typing");
+          setTimeout(erase, newMessageDelay);
           return;
         }
 
-        typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length - 1);
-        currentMessage = currentMessage.slice(0, -1);
+        typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length + 1);
+        currentMessage += messages[currentMessageIndex][currentMessage.length];
 
-        setTimeout(erase, erasingDelay);
+        setTimeout(type, typingDelay);
+      }
+    }
+
+    function erase() {
+      if (currentMessage.length === 0) {
+        // 모든 글자를 삭제한 경우, 다음 메시지로 넘어갈 수 있게.
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        setTimeout(type, typingDelay);
+        return;
       }
 
-      type();
-    </script>
-    <div id="main-container">
+      typingText.textContent = messages[currentMessageIndex].slice(0, currentMessage.length - 1);
+      currentMessage = currentMessage.slice(0, -1);
+
+      setTimeout(erase, erasingDelay);
+    }
+
+    type();
+  </script>
+  <div id="main-container">
     <div id="hero-wrapper">
       <section id="hero" class="d-flex align-items-center">
 
@@ -121,8 +121,8 @@
 
           <div class="row icon-boxes">
             <div class="col-md-6 col-lg-3 d-flex justify-content-center align-items-stretch mb-5 mb-lg-0" id="mainicon"
-              data-aos="zoom-in" data-aos-delay="500"
-              onclick="location.href='https://castlehyeon.github.io/my-portfolio/';">
+                 data-aos="zoom-in" data-aos-delay="500"
+                 onclick="location.href='https://castlehyeon.github.io/my-portfolio/';">
               <div>
                 <div class="icon-box  border rounded-circle">
                   <img src="/project_4team/images/KSHimg.jpeg" alt="" width="100">
@@ -139,8 +139,8 @@
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex justify-content-center align-items-stretch mb-5 mb-lg-0" id="mainicon"
-              data-aos="zoom-in" data-aos-delay="500"
-              onclick="location.href='https://crystal9799.github.io/2th_Report/';">
+                 data-aos="zoom-in" data-aos-delay="500"
+                 onclick="location.href='https://crystal9799.github.io/2th_Report/';">
               <div>
                 <div class="icon-box  border rounded-circle">
                   <img src="/project_4team/images/LGHimg.JPG" alt="" width="100">
@@ -156,7 +156,7 @@
               </div>
             </div>
             <div class="col-md-6 col-lg-3 d-flex justify-content-center align-items-stretch mb-5 mb-lg-0" id="mainicon"
-              data-aos="zoom-in" data-aos-delay="500" onclick="location.href='https://seoyeoe.github.io';">
+                 data-aos="zoom-in" data-aos-delay="500" onclick="location.href='https://seoyeoe.github.io';">
               <div>
                 <div class="icon-box  border rounded-circle">
                   <img src="/project_4team/images/LSYimg.JPG" alt="" width="100">
@@ -173,7 +173,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3 d-flex justify-content-center align-items-stretch mb-5 mb-lg-0" id="mainicon"
-              data-aos="zoom-in" data-aos-delay="500" onclick="location.href='https://lyejin.github.io/my_portfoilo/';">
+                 data-aos="zoom-in" data-aos-delay="500" onclick="location.href='https://lyejin.github.io/my_portfoilo/';">
               <div>
                 <div class="icon-box border rounded-circle">
                   <img src="https://lyejin.github.io/my_portfoilo/image/LYJimg.JPG" alt="" width="100">
@@ -191,13 +191,13 @@
 
       </section><!-- End Hero -->
     </div>
-    </div>
-  </main>
+  </div>
+</main>
 
-  <footer>
-    <p id="bottom">&copy; 2023 Studio Ghibli. All rights reserved.</p>
-  </footer>
-  <script src="js/dragdrop.js"></script>
+<footer>
+  <p id="bottom">&copy; 2023 Studio Ghibli. All rights reserved.</p>
+</footer>
+<script src="js/dragdrop.js"></script>
 <!--<script src="js/cusor.js"></script>-->
 </body>
 
