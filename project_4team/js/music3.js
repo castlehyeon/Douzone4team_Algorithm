@@ -48,6 +48,32 @@ new Swiper('.swiper', {
   }
 });
 
+new Swiper('.swiper', {
+  loop: true,
+  slidesPerView: 4, //
+  spaceBetween: 15,// 간격
+  centeredSlides: true,
+
+  navigation: {
+    prevEl: '#nextimg',
+    nextEl: '#previmg'
+  },
+
+  //기울기효과
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 30,
+    slideShadows: false,
+  }
+});
+
+
+
 // left player 
 let songimg = document.querySelector('.image1');
 songimg.innerHTML = `<img src="${All_song[0].img}" />`;
@@ -116,9 +142,11 @@ $(function () {
 let index = 0;
 
 //이미지 변경
+
 $(function () {
   $(".swiper-button-prev").click(function () {
     console.log('prev');
+
     if (index == 3) {
       index = 0;
     } else {
@@ -126,11 +154,14 @@ $(function () {
     }
 
     document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
-rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
     document.getElementById('sid').style.backgroundSize = "cover";
 
   });
 });
+
+
+
 
 
 $(function () {
@@ -149,6 +180,10 @@ rgba(118, 118, 118, 0.667)), url("${All_song[index].img}") no-repeat 0 0`;
   });
 });
 
+
+
+
+
 $(function () {
   $(".swiper-button-next").click(function () {
     musicAudio.pause();
@@ -169,12 +204,12 @@ $(function () {
 
 $(function () {
   $(".swiper-button-next").click(function () {
-    document.querySelector(".p1").setAttribute("src", "images/playb.png"); 
+    document.querySelector(".p1").setAttribute("src", "images/playb.png");
   });
 });
 $(function () {
   $(".swiper-button-prev").click(function () {
-    document.querySelector(".p1").setAttribute("src", "images/playb.png"); 
+    document.querySelector(".p1").setAttribute("src", "images/playb.png");
   });
 });
 
@@ -199,11 +234,6 @@ $(function () {
 });
 
 
-musicAudio2.onprogress = function () { myScript };
-musicAudio2.addEventListener("progress", myScript);
-
-
-
 
 const musicAudio3 = document.querySelector("#audio3");
 musicAudio3.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Always+With+Me.mp3";
@@ -211,7 +241,7 @@ $(function () {
   var check = true;
   $(".p3").click(function () {
     if (check) {
-      audio.play();
+//      audio.play();
       musicAudio3.play();
       $(this).attr("src", "images/pause.png");
       check = false;
@@ -258,6 +288,46 @@ hz.addEventListener("timeupdate", getCurTime);
 function getCurTime() {
   document.getElementsByClassName('.durations')[0].innerHTML = hz.currentTime;
 }
+
+
+
+/*
+$(function () {
+  $(".pv1").click(function () {
+    console.log('prev');
+
+    if (index == 3) {
+      index = 0;
+    } else {
+      index++;
+    }
+
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
+
+$(function () {
+  $(".pn1").click(function () {
+    console.log('prev');
+
+    if (index == 0) {
+      index = 3;
+    } else {
+      index--;
+    }
+
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
+
+
+*/
 
 //sflen1.innerHTML="2:33";
 //sflen1.innerHTML=musicObj.duration;
@@ -332,24 +402,7 @@ let songname2 = document.querySelector('#n1');
 songname2.innerHTML = `<p id="f1">${All_song[2].name}</p>
 <p id="f2">${All_song[2].singer}</p>`;
 
-const musicObj2 = new Audio();
-musicObj2.src = "music/2.mp3";
-
-$(function () {
-  var check = true;
-  $(".p2").click(function () {
-    if (check) {
-      musicObj2.play();
-      $(this).attr("src", "images/pause.png");
-      check = false;
-    } else if (!check) {
-      musicObj2.pause();
-      $(this).attr("src", "images/playb.png");
-      check = true;
-    }
-  });
-});
-
+ 
 
 $(function () {
   var check = true;
