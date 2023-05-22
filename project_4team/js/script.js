@@ -72,9 +72,8 @@ const playMusic = () => {
   playBottomBtn.value = "pause";
   playBtn.className = "fa-sharp fa-solid fa-circle-pause fa-3x";
   playBottomBtn.className = "fas fa-pause";
-  musicAudio.oncanplaythrough = () => {
-    musicAudio.play();
-  };
+  musicAudio.play();
+  // console.log("플레이");
 };
 
 //음악 일시정지

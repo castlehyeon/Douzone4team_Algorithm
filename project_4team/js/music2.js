@@ -57,7 +57,7 @@ function pauseMusic(){
 }
 
 function playPrevSong() {
-    songIndex--;
+    songIndex--; 
 
     if (songIndex < 0) {
       songIndex = songs.length - 1;
