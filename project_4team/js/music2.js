@@ -65,10 +65,10 @@ function playPrevSong() {
     songIndex--;
 
     if (songIndex < 0) {
+        nowplay[0].style.backgroundColor = "rgba(244, 244, 244, 0.5)";
       songIndex = songs.length - 1;
     }
     
-
     loadSong(songs[songIndex]);
     playMusic();
     
