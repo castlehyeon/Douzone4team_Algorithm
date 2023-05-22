@@ -45,13 +45,13 @@ let All_song = [
 
 new Swiper('.swiper', {
   loop: true,
-  slidesPerView: 3.5, //
-  spaceBetween: 10,// 간격
+  slidesPerView: 4, //
+  spaceBetween: 15,// 간격
   centeredSlides: true,
 
   navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next'
+    prevEl: '.swiper-button-next',
+    nextEl: '.swiper-button-prev'
   },
 
   //기울기효과
