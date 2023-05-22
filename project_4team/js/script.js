@@ -6,24 +6,21 @@ const mainShuffle = musicWrap.querySelector(".shuffle");
 const mainHeart = musicWrap.querySelector(".heart");
 const mainHeartIcon = musicWrap.querySelector("#heartIcon");
 const mainHeartSpan = musicWrap.querySelector(".heartSpan");
-
-const mainHeartFunction = (color, text) => {
-  mainHeartIcon.style.color = color;
-  mainHeartSpan.innerHTML = text;
-};
-
 if (localStorage.getItem("heart") == "true") {
-  mainHeartFunction("red", "&nbsp;&nbsp;391,235");
+  mainHeartIcon.style.color = "red";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
 } else if (localStorage.getItem("heart") == "false") {
-  mainHeartFunction("rgb(177, 177, 177)", "&nbsp;&nbsp;391,234");
+  mainHeartIcon.style.color = "rgb(177, 177, 177)";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
 } else {
-  mainHeartFunction("rgb(177, 177, 177)", "&nbsp;&nbsp;391,234");
+  mainHeartIcon.style.color = "rgb(177, 177, 177)";
+  mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
 }
 
 // music info
 const imgWrap = musicWrap.querySelector(".page_two__main__current_music_photo");
 const albumArt = musicWrap.querySelector(
-  ".page_two__main__current_music_photo>img"
+    ".page_two__main__current_music_photo>img"
 );
 const musicName = musicWrap.querySelector(".currrent_music_info__title");
 const musicArtist = musicWrap.querySelector(".currrent_music_info__singer");
@@ -72,16 +69,17 @@ const playMusic = () => {
   playBottomBtn.value = "pause";
   playBtn.className = "fa-sharp fa-solid fa-circle-pause fa-3x";
   playBottomBtn.className = "fas fa-pause";
-  musicAudio.oncanplaythrough = () => {
-    musicAudio.play();
-  };
+  let playPromise = musicAudio.play();
+  if (playPromise !== undefined) {
+    playPromise.then((_) => {}).catch((error) => {});
+  }
 };
 
 //음악 일시정지
 const pauseMusic = () => {
   playBtn.value = "play_arrow";
   playBottomBtn.value = "play_arrow";
-  playBtn.className = "fas fa-play-circle fa-3x";
+  playBtn.className = "fas fa-play-circle fa-3x"; // 플레이 아이콘
   playBottomBtn.className = "fa-solid fa-play";
   musicAudio.pause();
 };
@@ -164,15 +162,16 @@ progress.addEventListener("click", (e) => {
   progressPin.style.left = `${96.5}%`;
 });
 
-//한곡 재생
 repeatBtn.addEventListener("click", () => {
-  let getTextRepeat = repeatBtn.title;
+  let getTextRepeat = repeatBtn.innerHTML;
   switch (getTextRepeat) {
     case "repeat":
+      repeatBtn.innerHTML = "repeat_one";
       repeatBtn.style.color = "black";
       repeatBtn.setAttribute("title", "repeat_one");
       break;
     case "repeat_one":
+      repeatBtn.innerHTML = "repeat";
       repeatBtn.style.color = "gray";
       repeatBtn.setAttribute("title", "repeat");
       break;
@@ -186,10 +185,12 @@ shuffleBtn.addEventListener("click", () => {
     case "shuffle":
       shuffleBtn.title = "shuffle_on";
       shuffleBtn.style.color = "black";
+      shuffleBtn.setAttribute("title", "shuffle_on");
       break;
     case "shuffle_on":
       shuffleBtn.title = "shuffle";
       shuffleBtn.style.color = "gray";
+      shuffleBtn.setAttribute("title", "shuffle");
       break;
   }
 });
@@ -210,16 +211,19 @@ mainShuffle.addEventListener("click", () => {
 mainHeart.addEventListener("click", () => {
   if (localStorage.getItem("heart") == null) {
     localStorage.setItem("heart", "true");
-    mainHeartFunction("red", "&nbsp;&nbsp;391,235");
+    mainHeartIcon.style.color = "red";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
     return;
   }
 
   if (localStorage.getItem("heart") == "true") {
     localStorage.setItem("heart", "false");
-    mainHeartFunction("rgb(177, 177, 177)", "&nbsp;&nbsp;391,234");
+    mainHeartIcon.style.color = "rgb(177, 177, 177)";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,234";
   } else {
     localStorage.setItem("heart", "true");
-    mainHeartFunction("red", "&nbsp;&nbsp;391,235");
+    mainHeartIcon.style.color = "red";
+    mainHeartSpan.innerHTML = "&nbsp;&nbsp;391,235";
   }
 });
 
@@ -262,10 +266,12 @@ const playListMusic = () => {
     //클릭시 active class 주기
     if (playListAll[i].classList.contains("active")) {
       playListAll[i].classList.remove("active");
+      console.log(playListAll[i]);
     }
     if (playListAll[i].getAttribute("data-index") == list_index) {
       playListAll[i].classList.add("active");
     }
+    /* playListAll[i].addEventListener('click',(e)=>clicked(e.target)); //느리다 */
     playListAll[i].setAttribute("onclick", "clicked(this)");
   }
 };
