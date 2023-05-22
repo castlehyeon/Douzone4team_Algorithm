@@ -5,7 +5,7 @@
   font-style: normal;
 }
  
-
+ 
 header {
   background-color: #000;
   color: #fff;
@@ -46,10 +46,11 @@ body {
 }
 
 .swiper { 
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.6)),
-    url("images/1.jpg");
+  background-image: linear-gradient(rgba(118, 118, 118, 0.667),
+  rgba(118, 118, 118, 0.667)), url("/Douzone4team_Algorithm/project_4team/images/Py0.gif");
   background-size: cover;
+margin-left: -19px;
+margin-top: -19px;
 }
  
 .material-icons {
