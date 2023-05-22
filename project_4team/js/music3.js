@@ -42,6 +42,7 @@ let All_song = [
     singer: "New Jeans"
   }
 ];
+
 new Swiper('.swiper', {
   loop: true,
   slidesPerView: 3.5, //
@@ -64,6 +65,7 @@ new Swiper('.swiper', {
     slideShadows: false,
   }
 });
+
 // left player 
 let songimg = document.querySelector('.image1');
 songimg.innerHTML = `<img src="${All_song[0].img}" />`;
@@ -76,6 +78,39 @@ let slen1 = document.querySelector('#current_duration1');
 let sflen1 = document.querySelector('#total_duration1');
 
 //left
+var audio = document.getElementById('audio1');
+console.log(typeof audio + " " + audio);
+    // span 객체 얻기
+    var current = document.getElementById('current_duration1');
+    var total = document.getElementById('total_duration1');
+    // progress 객체 얻기
+    var progress = document.getElementById('progress');
+
+    // Audio 객체에 timeupdate 이벤트 처리를 위한 리스너 부착
+    // addEventListener() 함수 사용
+    audio.addEventListener('timeupdate', function () {
+        // 오디오의 총 재생시간 얻고 설정
+        total.innerHTML = audio.duration;
+        // 오디오의 현재 재생시간 얻고 설정
+        current.innerHTML = audio.currentTime;
+        // 타임 업데이트에 따른 프로그레스 진행정도 표시
+        // 최대값 설정
+        progress.max = audio.duration;
+        // 진행 정도
+        progress.value = audio.currentTime;
+    });
+
+// 재생버튼시 호출하는 함수
+var play = function () {
+    audio.play();
+};
+
+// 일시정지버튼시 호출하는 함수
+var pause = function () {
+    audio.pause();
+};
+
+
 const musicAudio = document.querySelector("#audio1");
 musicAudio.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Howls+Moving+Castle+OST++Theme+Song.mp3";
 
@@ -83,6 +118,7 @@ $(function () {
   var check = true;
   $(".p1").click(function () {
     if (check) {
+      audio.play();
       musicAudio.play();
       $(this).attr("src", "images/pause.png");
       check = false;
@@ -93,6 +129,11 @@ $(function () {
     }
   });
 });
+
+
+
+
+
 
 
 const musicAudio2 = document.querySelector("#audio2");
@@ -112,6 +153,11 @@ $(function () {
     }
   });
 });
+
+
+musicAudio2.onprogress = function () { myScript };
+musicAudio2.addEventListener("progress", myScript);
+
 
 
 
