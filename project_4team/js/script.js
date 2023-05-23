@@ -227,16 +227,18 @@ mainHeart.addEventListener("click", () => {
 //음악 재생 끝날 때
 musicAudio.addEventListener("ended", () => {
   let getTextRepeat = repeatBtn.title;
+  let getTextShuffle = shuffleBtn.title;
   switch (getTextRepeat) {
     case "repeat":
-      nextMusic();
+      if (getTextShuffle == "shuffle") {
+        nextMusic();
+      }
       break;
     case "repeat_one":
       loadMusic(list_index);
       playMusic();
       break;
   }
-  let getTextShuffle = shuffleBtn.title;
   switch (getTextShuffle) {
     case "shuffle":
       loadMusic(list_index);
