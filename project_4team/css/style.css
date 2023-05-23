@@ -100,11 +100,21 @@ p {
   height: min-content;
 }
 #typingText::after {
-  content: "|"; /* 커서 표시를 위해 수직 막대(|)로 설정 */
+  /* 커서 표시를 위해 수직 막대(|)로 설정 */
+  content: "|";
   animation: blink-caret 0.75s step-end infinite;
+  /* 애니메이션 정의 
+  0.75s는 애니메이션의 지속 시간(duration)
+  step-end는 애니메이션 키프레임 사이에서 어떤 값이 사용되어야 하는지를 정의하는 스탭(step) 함수
+  스텝함수란 CSS 애니메이션아 사용하는 Timing Fucntion 중 하나.
+  infinite는 애니메이션을 무한히 반복하도록 지정하는 키워드
+  */
 }
 
 @keyframes blink-caret {
+  /*
+  opacity 속성은 0과 1 사이에서 변화
+  */
   from,
   to {
     opacity: 0;
@@ -357,6 +367,7 @@ footer {
   box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
 }
+
 .singer-photo img {
   position: absolute;
   top: 0px;

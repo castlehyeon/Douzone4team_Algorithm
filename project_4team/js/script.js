@@ -69,15 +69,10 @@ const playMusic = () => {
   playBottomBtn.value = "pause";
   playBtn.className = "fa-sharp fa-solid fa-circle-pause fa-3x";
   playBottomBtn.className = "fas fa-pause";
-<<<<<<< HEAD
-  musicAudio.play();
-  // console.log("플레이");
-=======
   let playPromise = musicAudio.play();
   if (playPromise !== undefined) {
     playPromise.then((_) => {}).catch((error) => {});
   }
->>>>>>> d04bb587ff92632474b3ce31b7739705df47b3e8
 };
 
 //음악 일시정지
@@ -235,16 +230,18 @@ mainHeart.addEventListener("click", () => {
 //음악 재생 끝날 때
 musicAudio.addEventListener("ended", () => {
   let getTextRepeat = repeatBtn.title;
+  let getTextShuffle = shuffleBtn.title;
   switch (getTextRepeat) {
     case "repeat":
-      nextMusic();
+      if (getTextShuffle == "shuffle") {
+        nextMusic();
+      }
       break;
     case "repeat_one":
       loadMusic(list_index);
       playMusic();
       break;
   }
-  let getTextShuffle = shuffleBtn.title;
   switch (getTextShuffle) {
     case "shuffle":
       loadMusic(list_index);
