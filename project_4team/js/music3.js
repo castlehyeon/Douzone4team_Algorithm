@@ -2,56 +2,38 @@ let All_song = [
   {
     name: "Unforgiven",
     path: "music/1.mp3",
-    img: "images/1.jpg",
+    img: "https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791133477210.jpg",
     singer: "LE SSERAFIM"
   },
   {
     name: "Hype Boy",
     path: "music/2.mp3",
-    img: "images/2.jpg",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLJ_gJ8FBBlVg8E8UcHqrEIJ1mQ1uZXEnZeNejwGKA0NKq95YzRrHYJBg3fwzJ-nHFaps&usqp=CAU",
     singer: "New Zeans"
   },
   {
     name: "I AM",
     path: "music/3.mp3",
-    img: "images/3.jpg",
+    img: "https://mblogthumb-phinf.pstatic.net/MjAxNzA2MDRfMjQy/MDAxNDk2NTY4NjI4MjI5.o6qKy0vaoTOHumrOCijDxf0eYxEL16SPJCeoitOYbeEg.eb4qdhFPuB1LRG-xWciJa4pfNw4Ojb646byFPf1RkRkg.JPEG.daekk1228/%EC%84%BC%EA%B3%BC_%EC%B9%98%ED%9E%88%EB%A1%9C%EC%9D%98_%ED%96%89%EB%B0%A9%EB%B6%88%EB%AA%85.jpg?type=w800",
     singer: "IVE"
   },
   {
     name: "Flower",
     path: "music/4.mp3",
-    img: "images/4.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/ko/9/9b/%EB%A7%88%EB%85%80%EB%B0%B0%EB%8B%AC%EB%B6%80%ED%82%A4%ED%82%A4_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg",
     singer: "지수"
-  },
-  {
-    name: "Antifreeze",
-    path: "music/5.mp3",
-    img: "images/5.jpg",
-    singer: "백예린"
-  },
-  {
-    name: "Cupid",
-    path: "music/6.mp3",
-    img: "images/6.jpg",
-    singer: "FIFTY FIFTY"
-  },
-  {
-    name: "OMG",
-    path: "music/7.mp3",
-    img: "images/7.jpg",
-    singer: "New Jeans"
   }
 ];
 
 new Swiper('.swiper', {
   loop: true,
-  slidesPerView: 3.5, //
-  spaceBetween: 10,// 간격
+  slidesPerView: 4, //
+  spaceBetween: 15,// 간격
   centeredSlides: true,
 
   navigation: {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next'
+    prevEl: '.swiper-button-next',
+    nextEl: '.swiper-button-prev'
   },
 
   //기울기효과
@@ -65,6 +47,32 @@ new Swiper('.swiper', {
     slideShadows: false,
   }
 });
+
+new Swiper('.swiper', {
+  loop: true,
+  slidesPerView: 4, //
+  spaceBetween: 15,// 간격
+  centeredSlides: true,
+
+  navigation: {
+    prevEl: '#nextimg',
+    nextEl: '#previmg'
+  },
+
+  //기울기효과
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
+  effect: 'coverflow',
+  coverflowEffect: {
+    rotate: 30,
+    slideShadows: false,
+  }
+});
+
+
 
 // left player 
 let songimg = document.querySelector('.image1');
@@ -80,34 +88,34 @@ let sflen1 = document.querySelector('#total_duration1');
 //left
 var audio = document.getElementById('audio1');
 console.log(typeof audio + " " + audio);
-    // span 객체 얻기
-    var current = document.getElementById('current_duration1');
-    var total = document.getElementById('total_duration1');
-    // progress 객체 얻기
-    var progress = document.getElementById('progress');
+// span 객체 얻기
+var current = document.getElementById('current_duration1');
+var total = document.getElementById('total_duration1');
+// progress 객체 얻기
+var progress = document.getElementById('progress');
 
-    // Audio 객체에 timeupdate 이벤트 처리를 위한 리스너 부착
-    // addEventListener() 함수 사용
-    audio.addEventListener('timeupdate', function () {
-        // 오디오의 총 재생시간 얻고 설정
-        total.innerHTML = audio.duration;
-        // 오디오의 현재 재생시간 얻고 설정
-        current.innerHTML = audio.currentTime;
-        // 타임 업데이트에 따른 프로그레스 진행정도 표시
-        // 최대값 설정
-        progress.max = audio.duration;
-        // 진행 정도
-        progress.value = audio.currentTime;
-    });
+// Audio 객체에 timeupdate 이벤트 처리를 위한 리스너 부착
+// addEventListener() 함수 사용
+audio.addEventListener('timeupdate', function () {
+  // 오디오의 총 재생시간 얻고 설정
+  total.innerHTML = audio.duration;
+  // 오디오의 현재 재생시간 얻고 설정
+  current.innerHTML = audio.currentTime;
+  // 타임 업데이트에 따른 프로그레스 진행정도 표시
+  // 최대값 설정
+  progress.max = audio.duration;
+  // 진행 정도
+  progress.value = audio.currentTime;
+});
 
 // 재생버튼시 호출하는 함수
 var play = function () {
-    audio.play();
+  audio.play();
 };
 
 // 일시정지버튼시 호출하는 함수
 var pause = function () {
-    audio.pause();
+  audio.pause();
 };
 
 
@@ -130,9 +138,80 @@ $(function () {
   });
 });
 
+//--main-black: rgba(0, 0, 0, 0.85);
+let index = 0;
+
+//이미지 변경
+
+$(function () {
+  $(".swiper-button-prev").click(function () {
+    console.log('prev');
+
+    if (index == 3) {
+      index = 0;
+    } else {
+      index++;
+    }
+
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
 
 
 
+
+
+$(function () {
+  $(".swiper-button-next").click(function () {
+    console.log('next');
+    if (index == 0) {
+      index = 3;
+    } else {
+      index--;
+    }
+    //musicAudio`index`.pause();
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+rgba(118, 118, 118, 0.667)), url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
+
+
+
+
+
+$(function () {
+  $(".swiper-button-next").click(function () {
+    musicAudio.pause();
+    musicAudio2.pause();
+    musicAudio3.pause();
+    musicAudio4.pause();
+  });
+});
+
+$(function () {
+  $(".swiper-button-prev").click(function () {
+    musicAudio.pause();
+    musicAudio2.pause();
+    musicAudio3.pause();
+    musicAudio4.pause();
+  });
+});
+
+$(function () {
+  $(".swiper-button-next").click(function () {
+    document.querySelector(".p1").setAttribute("src", "images/playb.png");
+  });
+});
+$(function () {
+  $(".swiper-button-prev").click(function () {
+    document.querySelector(".p1").setAttribute("src", "images/playb.png");
+  });
+});
 
 
 
@@ -155,11 +234,6 @@ $(function () {
 });
 
 
-musicAudio2.onprogress = function () { myScript };
-musicAudio2.addEventListener("progress", myScript);
-
-
-
 
 const musicAudio3 = document.querySelector("#audio3");
 musicAudio3.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/Always+With+Me.mp3";
@@ -167,6 +241,7 @@ $(function () {
   var check = true;
   $(".p3").click(function () {
     if (check) {
+//      audio.play();
       musicAudio3.play();
       $(this).attr("src", "images/pause.png");
       check = false;
@@ -177,6 +252,7 @@ $(function () {
     }
   });
 });
+
 
 const musicAudio4 = document.querySelector("#audio4");
 musicAudio4.src = "https://movie4team.s3.ap-northeast-2.amazonaws.com/y2mate.com+-+Kikis+Delivery+Service++Umi+No+Mieru+Machi+Piano.mp3";
@@ -212,6 +288,46 @@ hz.addEventListener("timeupdate", getCurTime);
 function getCurTime() {
   document.getElementsByClassName('.durations')[0].innerHTML = hz.currentTime;
 }
+
+
+
+/*
+$(function () {
+  $(".pv1").click(function () {
+    console.log('prev');
+
+    if (index == 3) {
+      index = 0;
+    } else {
+      index++;
+    }
+
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
+
+$(function () {
+  $(".pn1").click(function () {
+    console.log('prev');
+
+    if (index == 0) {
+      index = 3;
+    } else {
+      index--;
+    }
+
+    document.getElementById('sid').style.background = `linear-gradient(rgba(118, 118, 118, 0.667),
+    rgba(118, 118, 118, 0.667)),url("${All_song[index].img}") no-repeat 0 0`;
+    document.getElementById('sid').style.backgroundSize = "cover";
+
+  });
+});
+
+
+*/
 
 //sflen1.innerHTML="2:33";
 //sflen1.innerHTML=musicObj.duration;
@@ -286,24 +402,7 @@ let songname2 = document.querySelector('#n1');
 songname2.innerHTML = `<p id="f1">${All_song[2].name}</p>
 <p id="f2">${All_song[2].singer}</p>`;
 
-const musicObj2 = new Audio();
-musicObj2.src = "music/2.mp3";
-
-$(function () {
-  var check = true;
-  $(".p2").click(function () {
-    if (check) {
-      musicObj2.play();
-      $(this).attr("src", "images/pause.png");
-      check = false;
-    } else if (!check) {
-      musicObj2.pause();
-      $(this).attr("src", "images/playb.png");
-      check = true;
-    }
-  });
-});
-
+ 
 
 $(function () {
   var check = true;
